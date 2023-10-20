@@ -39,7 +39,7 @@ export const taskCreationAgent = async (
         openAIApiKey,
         modelName,
         temperature: 0.4,
-        maxTokens: 3000,
+        maxTokens: 2500,
         topP: 1,
         frequencyPenalty: 0,
         presencePenalty: 0,
