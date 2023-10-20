@@ -150,7 +150,7 @@ export class BabyDeerAGI extends AgentExecuter {
         (task) => task.status === 'incomplete',
       );
       // Filter tasks that have all their dependencies completed
-      const MaxExecutableTasks = 5;
+      const MaxExecutableTasks = 2;
       const executableTasks = incompleteTasks
         .filter((task) => {
           if (!task.dependentTaskIds) return true;
