@@ -31,10 +31,7 @@ export class TaskRegistry {
     const exampleTaskList = relevantObjective.examples;
     const prompt = `
     You are an expert task list creation AI tasked with creating a  list of tasks as a JSON array, considering the ultimate objective of your team: ${objective}.
-    Create a  task list to create chapters for a complete APA style research paper based on the objective; the final output of the last task will be provided back to the user. 
-    Limit tasks types to those that can be completed with the available skills listed below. Task description should be detailed.###
-    If table of content is provided in the objective, the tasks must be created to match the table of contents. 
-    Only one task should be created for every topic in the provided table of contents and created tasks must follow and match the same list order of the provided table of contents.
+    Create a very short task list based on the objective, the final output of the last task will be provided back to the user. Limit tasks types to those that can be completed with the available skills listed below. Task description should be detailed.###
     AVAILABLE SKILLS: ${skillDescriptions}.###
     RULES:
     Do not use skills that are not listed.
