@@ -213,7 +213,7 @@ export class TaskRegistry {
       [
         {
           id: 5,
-          task: 'Complete the objective and provide a final report',
+          task: 'Complete the objective and combine all chapters created into one APA style research paper',
           skill: 'text_completion',
           icon: '🤖',
           dependent_task_ids: [1, 2, 3, 4],
