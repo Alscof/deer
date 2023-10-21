@@ -62,7 +62,7 @@ export class TaskRegistry {
           openAIApiKey,
           modelName,
           temperature: 0.4,
-          maxTokens: 3000,
+          maxTokens: 2500,
           topP: 1,
           verbose: this.verbose,
           streaming: true,
@@ -103,7 +103,7 @@ export class TaskRegistry {
             prompt: prompt,
             model_name: modelName,
             temperature: 0.4,
-            max_tokens: 3000,
+            max_tokens: 2500,
           },
           {
             signal: abortController?.signal,
