@@ -31,9 +31,10 @@ export class TaskRegistry {
     const exampleTaskList = relevantObjective.examples;
     const prompt = `
     You are an expert task list creation AI tasked with creating a  list of tasks as a JSON array, considering the ultimate objective of your team: ${objective}.
-    Create a very short task list based on the objective, the final output of the last task will be provided back to the user. Limit tasks types to those that can be completed with the available skills listed below. Task description should be detailed.###
+    Create a task list exactly matching the table of contents listed in the objective, the final output of the last task will be provided back to the user. Limit tasks types to those that can be completed with the available skills listed below. Task description should be detailed.###
     AVAILABLE SKILLS: ${skillDescriptions}.###
     RULES:
+    Use only the text completion skill to complete tasks and objective.
     Do not use skills that are not listed.
     Always include one skill.
     Do not create files unless specified in the objective.    
@@ -222,7 +223,7 @@ export class TaskRegistry {
       ],
     ];
 
-    const prompt = `You are an expert task manager, review the task output to decide at least one new task to add.
+    const prompt = `You are an expert task manager, review the task output to make sure the tasks match the table of contents listed in the objective.
   As you add a new task, see if there are any tasks that need to be updated (such as updating dependencies).
   Use the current task list as reference. 
   considering the ultimate objective of your team: ${objective}. 
@@ -234,7 +235,7 @@ export class TaskRegistry {
   Always select at least one skill.
   Task IDs should be unique and in chronological order.
   Do not change the status of complete tasks.
-  Only add skills from the AVAILABLE SKILLS, using the exact same spelling.
+  Only use the text completion skill.
   Provide your array as a JSON array with double quotes. The first object is new tasks to add as a JSON array, the second array lists the ID numbers where the new tasks should be added after (number of ID numbers matches array), The number of elements in the first and second arrays will always be the same. 
   And the third array provides the tasks that need to be updated.
   Make sure to keep dependent_task_ids key, even if an empty array.
@@ -253,7 +254,7 @@ export class TaskRegistry {
       openAIApiKey: getUserApiKey(),
       modelName,
       temperature: 0.7,
-      maxTokens: 3000,
+      maxTokens: 2500,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
