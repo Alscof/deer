@@ -21,7 +21,7 @@ export const textCompletionToolPrompt = (
   task: string,
   dependentTaskOutput: string,
 ) => {
-  let prompt = `You are a university professor, Complete your assigned task by writing well-researched, detailed, and explained chapter to be part of an APA style research paper based on the objective and only based on information provided in the dependent task output, if provided.
+  let prompt = `You are a university professor, Complete your assigned task by writing well-researched, detailed, and explained chapter to be part of an APA style research paper based on the objective and only based on information provided in the dependent task output, if provided. for every topic or task, create have 5 to 12 detail and well explained points.
    Your objective: ${objective}. Your task: ${task}
    Output must be answered in ${language}.\n
    `;
