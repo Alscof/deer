@@ -268,7 +268,7 @@ export class TaskRegistry {
     const result = response.text;
     console.log('\n' + result);
 
-    // Check if the returned result has the expected structure
+    // Check if the returned result has the expected structure 
     if (typeof result === 'string') {
       try {
         const taskList = JSON.parse(result);
