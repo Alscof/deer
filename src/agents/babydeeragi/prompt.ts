@@ -10,7 +10,7 @@ export const searchQueryPrompt = (task: string, dependent_task: string) => {
 };
 
 export const analystPrompt = (results: string, language: string) => {
-  return `You are an expert analyst. Use the following information to write well-researched, detailed, and explained chapter to be part of an APA style research paper without removing any facts.
+  return `You are an expert analyst. Use the following information to write well-researched, detailed, and explained chapter to be part of an APA style research proposal without removing any facts.
   Report must be answered in ${language}.
   \n###INFORMATION:${results}.\n###REPORT:`;
 };
@@ -21,7 +21,7 @@ export const textCompletionToolPrompt = (
   task: string,
   dependentTaskOutput: string,
 ) => {
-  let prompt = `You are a university professor, Complete your assigned task by writing well-researched, detailed, and explained chapter to be part of an APA style research paper based on the objective and only based on information provided in the dependent task output, if provided. for every topic or task, create have 5 to 12 detail and well explained points.
+  let prompt = `You are a university professor, Complete your assigned task by writing well-researched, detailed, and explained chapter to be part of an APA style research proposal based on the objective and only based on information provided in the dependent task output, if provided. for every topic or task, create have 5 to 12 detail and well explained points.
    Your objective: ${objective}. Your task: ${task}
    Output must be answered in ${language}.\n
    `;
